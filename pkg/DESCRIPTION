@@ -1,8 +1,8 @@
 Package: RHRV
 Type: Package
 Title: Heart Rate Variability Analysis of ECG Data
-Version: 4.2.6
-Date: 2020-12-14
+Version: 4.2.7
+Date: 2022-10-31
 Maintainer: Leandro Rodriguez-Linares <leandro@uvigo.es>
 Authors@R: c(person("Leandro", "Rodriguez-Linares", 
                      email = "leandro@uvigo.es",
