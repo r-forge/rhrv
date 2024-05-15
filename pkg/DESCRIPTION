@@ -1,8 +1,8 @@
 Package: RHRV
 Type: Package
 Title: Heart Rate Variability Analysis of ECG Data
-Version: 4.2.8
-Date: 2024-01-15
+Version: 5.0.0 
+Date: 2024-05-14
 Maintainer: Leandro Rodriguez-Linares <leandro@uvigo.es>
 Authors@R: c(person("Leandro", "Rodriguez-Linares", 
                      email = "leandro@uvigo.es",
@@ -15,6 +15,7 @@ Authors@R: c(person("Leandro", "Rodriguez-Linares",
                      role = "aut"),
              person("Matti", "Lassila",
                      role = "ctb"))
+Encoding: UTF-8
 URL: http://rhrv.r-forge.r-project.org/
 Description: Allows users to import data files containing heartbeat	positions in the most broadly used formats, to remove outliers or points with unacceptable physiological values present in the time series, to plot HRV data, and to perform time domain, frequency domain and nonlinear HRV analysis. See Garcia et al. (2017) <DOI:10.1007/978-3-319-65355-6>.
 License: GPL-2
@@ -23,12 +24,26 @@ Copyright: Code for the wavelet transform is based on Brandon Whitcher's work.
 Depends:
     R (>= 3.0.0),
     waveslim(>= 1.6.4),
-    nonlinearTseries (>= 0.2.3),
+    nonlinearTseries (>= 0.3.0),
     lomb (>= 1.0)
+Imports: 
+  boot,
+  broom,
+  doParallel,
+  foreach,
+  iterators,
+  parallel,
+  plotrix,
+  PMCMRplus,
+  segmented,
+  stats,
+  tibble,
+  tidyr,
+  writexl 
 Suggests:
     tcltk,
     tkrplot,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+RoxygenNote: 7.3.1

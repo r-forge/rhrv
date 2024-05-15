@@ -4,9 +4,15 @@
 \alias{CalculateEmbeddingDim}
 \title{Estimate the proper embedding dimension for the RR time series}
 \usage{
-CalculateEmbeddingDim(HRVData, numberPoints = 5000, timeLag = 1,
-  maxEmbeddingDim = 15, threshold = 0.95, maxRelativeChange = 0.05,
-  doPlot = TRUE)
+CalculateEmbeddingDim(
+  HRVData,
+  numberPoints = 5000,
+  timeLag = 1,
+  maxEmbeddingDim = 15,
+  threshold = 0.95,
+  maxRelativeChange = 0.05,
+  doPlot = TRUE
+)
 }
 \arguments{
 \item{HRVData}{Data structure that stores the beats register and information related to it}
@@ -71,4 +77,3 @@ Cao, L. Practical method for determining the minimum embedding dimension of a sc
 \seealso{
 \code{\link[nonlinearTseries]{estimateEmbeddingDim}}.
 }
-

@@ -6,19 +6,35 @@
 \alias{PlotInfDim}
 \title{Information dimension of the RR time series}
 \usage{
-CalculateInfDim(HRVData,
+CalculateInfDim(
+  HRVData,
   indexNonLinearAnalysis = length(HRVData$NonLinearAnalysis),
-  minEmbeddingDim = NULL, maxEmbeddingDim = NULL, timeLag = NULL,
-  minFixedMass = 1e-04, maxFixedMass = 0.005, numberFixedMassPoints = 50,
-  radius = 1, increasingRadiusFactor = 1.05, numberPoints = 500,
-  theilerWindow = 100, doPlot = TRUE)
+  minEmbeddingDim = NULL,
+  maxEmbeddingDim = NULL,
+  timeLag = NULL,
+  minFixedMass = 1e-04,
+  maxFixedMass = 0.005,
+  numberFixedMassPoints = 50,
+  radius = 1,
+  increasingRadiusFactor = 1.05,
+  numberPoints = 500,
+  theilerWindow = 100,
+  doPlot = TRUE
+)
 
-EstimateInfDim(HRVData,
+EstimateInfDim(
+  HRVData,
   indexNonLinearAnalysis = length(HRVData$NonLinearAnalysis),
-  regressionRange = NULL, useEmbeddings = NULL, doPlot = TRUE)
+  regressionRange = NULL,
+  useEmbeddings = NULL,
+  doPlot = TRUE
+)
 
-PlotInfDim(HRVData,
-  indexNonLinearAnalysis = length(HRVData$NonLinearAnalysis), ...)
+PlotInfDim(
+  HRVData,
+  indexNonLinearAnalysis = length(HRVData$NonLinearAnalysis),
+  ...
+)
 }
 \arguments{
 \item{HRVData}{Data structure that stores the beats register and information related to it}
@@ -106,4 +122,3 @@ H. Kantz  and T. Schreiber: Nonlinear Time series Analysis (Cambridge university
 \seealso{
 \code{\link{CalculateCorrDim}}.
 }
-
