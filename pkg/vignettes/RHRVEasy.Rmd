@@ -407,7 +407,7 @@ running this chunk of code.
 
 ```{r, eval=FALSE}
 fullAnalysis <- RHRVEasy(
-  folders = c(NSR_DB, CHF_DB, NSR_HALF_DB, CHF_HALF_DB),
+  folders = c(NSR_DB, CHF_DB, HEALTHY_DB),
   nJobs = -1,
   nonLinear =  TRUE, 
   doRQA = TRUE,
