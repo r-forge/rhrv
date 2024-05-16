@@ -26,7 +26,7 @@ export("AddEpisodes", "AnalyzeHRbyEpisodes","AnalyzePowerBandsByEpisodes",
        "NonlinearityTests","SurrogateTest","OverplotEpisodes",
        "ExtractTimeSegment","Window","EstimatePSDSlope",
        "ListEpisodes", "RemoveEpisodes", "ModifyEpisodes",
-       "RHRVEasy", "RHRVEasyStats", "saveHRVIndices"
+       "RHRVEasy", "RHRVEasyStats", "SaveHRVIndices"
 )
 
 S3method(estimateScalingRegion,corrDim)

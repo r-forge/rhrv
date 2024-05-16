@@ -41,7 +41,7 @@ this folder to your local machine and define the following variables:
 ```{r, eval=FALSE}
 library("RHRV")
 
-basePath <- "book_data" 
+basePath <- "book_data"  # adjust as needed
 NSR_DB <- file.path(basePath, "normal")
 CHF_DB <- file.path(basePath, "chf")
 HEALTHY_DB <- file.path(basePath, "healthy")
@@ -229,10 +229,10 @@ easyAnalysis <- RHRVEasy(folders = c(NSR_DB, CHF_DB),
 ```
 
 This spreadsheet can also be generated from the object returned by `RHRVEasy` 
-by calling the function `saveHRVIndices`.
+by calling the function `SaveHRVIndices`.
 
 ```{r, eval=FALSE}
-saveHRVIndices(easyAnalysis, saveHRVIndicesInPath = spreadsheetPath)
+SaveHRVIndices(easyAnalysis, saveHRVIndicesInPath = spreadsheetPath)
 ```
 
 # 4. Comparing more than two experimental groups
@@ -344,11 +344,7 @@ has been significant:
 
 ```{r, eval=FALSE}
 print(head(easyAnalysis3$stats))
-# Let's print the post-hoc comparisons for "SDNN"
-print(head(easyAnalysis3$stats$pairwise[[1]]))
 ```
-
-    print(head(easyAnalysis3$stats))
 
     ## # A tibble: 6 × 5
     ##   HRVIndex method                            p.value adj.p.value pairwise
@@ -360,8 +356,10 @@ print(head(easyAnalysis3$stats$pairwise[[1]]))
     ## 5 SDSD     Kruskal-Wallis rank sum test 0.0301       0.421       <NULL>  
     ## 6 rMSSD    Kruskal-Wallis rank sum test 0.0301       0.421       <NULL>
 
-    # Let's print the post-hoc comparisons for "SDNN"
-    print(head(easyAnalysis3$stats$pairwise[[1]]))
+```{r, eval=FALSE}
+# Let's print the post-hoc comparisons for "SDNN"
+print(head(easyAnalysis3$stats$pairwise[[1]]))
+```
 
     ## # A tibble: 3 × 6
     ##   HRVIndex group1  group2  method                     p.value adj.p.value

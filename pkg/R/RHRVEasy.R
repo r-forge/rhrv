@@ -22,7 +22,7 @@
 #' @param nJobs The number of parallel jobs to use. `nJobs <= 0` uses all cores
 #' available. By default, it is set to 1.
 #' @param saveHRVIndicesInPath The path where the HRV indices will be saved as
-#' an excel file. If NULL, the indices will not be saved. See [saveHRVIndices()]
+#' an excel file. If NULL, the indices will not be saved. See [SaveHRVIndices()]
 #' for more details.
 #' @param ... Additional arguments for the HRV analysis. For further details,
 #' see the `RHRV` package.
@@ -71,7 +71,7 @@ RHRVEasy <-
     results <- RHRVEasyResult(HRVIndices, pVals, easyOptions)
 
     if (!is.null(saveHRVIndicesInPath)) {
-      saveHRVIndices(results, saveHRVIndicesInPath)
+      SaveHRVIndices(results, saveHRVIndicesInPath)
     }
 
     results
@@ -146,17 +146,23 @@ RHRVEasyStats <- function(RHRVEasyResultObject,
 #' @param saveHRVIndicesInPath The path where the HRV indices will be saved as
 #' an excel file. The name of the file is automatically created based on the
 #' groups being compared.
+#' @param filename Filename of the excel file. If not provided, the name of the file
+#' is built using the names of the groups being compared.
 # @importFrom writexl write_xlsx
 # @export
-saveHRVIndices <- function(RHRVEasyResultObject, saveHRVIndicesInPath = ".") {
+SaveHRVIndices <- function(RHRVEasyResultObject, saveHRVIndicesInPath = ".",
+                           filename = NULL) {
+  if (is.null(filename)) {
+    filename <- paste0(
+      paste(unique(RHRVEasyResultObject$HRVIndices$group), collapse = "_Vs_"),
+      ".xlsx"
+    )
+  }
   tryCatch(
     {
       filename <- file.path(
         saveHRVIndicesInPath,
-        paste0(
-          paste(unique(RHRVEasyResultObject$HRVIndices$group), collapse = "_Vs_"),
-          ".xlsx"
-        )
+        filename
       )
       write_xlsx(RHRVEasyResultObject$HRVIndices, filename)
     },

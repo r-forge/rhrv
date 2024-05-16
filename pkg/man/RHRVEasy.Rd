@@ -51,7 +51,7 @@ computationally expensive.}
 available. By default, it is set to 1.}
 
 \item{saveHRVIndicesInPath}{The path where the HRV indices will be saved as
-an excel file. If NULL, the indices will not be saved. See [saveHRVIndices()]
+an excel file. If NULL, the indices will not be saved. See [SaveHRVIndices()]
 for more details.}
 
 \item{...}{Additional arguments for the HRV analysis. For further details,
