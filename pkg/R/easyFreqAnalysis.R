@@ -53,7 +53,7 @@ easyFreqAnalysis <-
 # @importFrom stats median
 easyWaveletAnalysis <-
   function(format, files, groups, paths, easyOptions, ...) {
-    opts <- NULL
+    # opts <- NULL
     # if (easyOptions$verbose) {
     #   opts <- list("progress" = updateProgressFactory("Wavelet analysis", files))
     # }
@@ -65,8 +65,8 @@ easyWaveletAnalysis <-
       .combine = rbind.data.frame,
       .export = c("prepareAnalysis", "easyCall"),
       # .packages = "RHRV",
-      .errorhandling = "pass",
-      .options.snow = opts
+      # .options.snow = opts,
+      .errorhandling = "pass"
     ) %dopar% {
       hrv.data <- prepareAnalysis(file = file, rrs = path, format = format, easyOptions = easyOptions)
       hrv.data <- withCallingHandlers(
@@ -100,8 +100,11 @@ easyWaveletAnalysis <-
         )
       ] <- NULL
       rowList <- c(resultsWavelet, list("group" = group))
-      if (easyOptions$verbose && !easyOptions$parallel) {
-        opts$progress(itcounter)
+      # if (easyOptions$verbose && !easyOptions$parallel) {
+      #   opts$progress(itcounter)
+      # }
+      if (easyOptions$verbose) {
+        message(paste("Freq. analysis of", file, "done"))
       }
       as.data.frame(rowList)
     }
