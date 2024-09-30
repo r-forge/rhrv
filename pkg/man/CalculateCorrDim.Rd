@@ -72,7 +72,7 @@ the correlation dimension}
 }
 \value{
 The \emph{CalculateCorrDim} returns the \emph{HRVData} structure containing a \emph{corrDim} object storing the results
-of the correlation sum (see \code{\link{corrDim}}) of the RR time series.
+of the correlation sum (see \code{\link[nonlinearTseries]{corrDim}}) of the RR time series.
 
 The \emph{EstimateCorrDim} function estimates the correlation dimension of the 
 RR time series by averaging the slopes of the embedding dimensions specified in

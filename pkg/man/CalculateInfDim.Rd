@@ -80,7 +80,7 @@ use to compute the information dimension.}
 }
 \value{
 The \emph{CalculateCorrDim} returns the \emph{HRVData} structure containing a \emph{infDim} object storing the results
-of the correlation sum (see \code{\link{infDim}}) of the RR time series.
+of the correlation sum (see \code{\link[nonlinearTseries]{infDim}}) of the RR time series.
 
 The \emph{EstimateInfDim} function estimates the information dimension of the 
 RR time series by averaging the slopes of the correlation sums with q=1.
